@@ -1,10 +1,10 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
 #include <memory>
-#include <thread> // Обязательно для задержки (sleep)
-#include <chrono> // Обязательно для указания секунд
+#include <thread> // РћР±СЏР·Р°С‚РµР»СЊРЅРѕ РґР»СЏ Р·Р°РґРµСЂР¶РєРё (sleep)
+#include <chrono> // РћР±СЏР·Р°С‚РµР»СЊРЅРѕ РґР»СЏ СѓРєР°Р·Р°РЅРёСЏ СЃРµРєСѓРЅРґ
 using namespace std;
 
 class Employee
@@ -99,10 +99,10 @@ public:
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	cout << "=== СИСТЕМА УПРАВЛЕНИЯ СОТРУДНИКАМИ И ПРОЕКТАМИ ===\n\n";
+	cout << "=== РЎРРЎРўР•РњРђ РЈРџР РђР’Р›Р•РќРРЇ РЎРћРўР РЈР”РќРРљРђРњР Р РџР РћР•РљРўРђРњР ===\n\n";
 
 	char choice;
-	cout << "Включить режим жесткого кранча (y/n)? ";
+	cout << "Р’РєР»СЋС‡РёС‚СЊ СЂРµР¶РёРј Р¶РµСЃС‚РєРѕРіРѕ РєСЂР°РЅС‡Р° (y/n)? ";
 	cin >> choice;
 
 	int delayTime = 5;
@@ -114,10 +114,10 @@ int main()
 	}
 	else if (choice == 'n')
 	{
-		cout << "\n[INFO] Работаем в обычном режиме (без кранчей, паузы по 5 сек).\n\n";
+		cout << "\n[INFO] Р Р°Р±РѕС‚Р°РµРј РІ РѕР±С‹С‡РЅРѕРј СЂРµР¶РёРјРµ (Р±РµР· РєСЂР°РЅС‡РµР№, РїР°СѓР·С‹ РїРѕ 5 СЃРµРє).\n\n";
 	}
 	this_thread::sleep_for(chrono::seconds(delayTime));
-	cout << "[LOG] Инициализация сотрудников в системе...\n";
+	cout << "[LOG] РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃРѕС‚СЂСѓРґРЅРёРєРѕРІ РІ СЃРёСЃС‚РµРјРµ...\n";
 	shared_ptr<Employee> p1 = make_shared<Programmer>("Babenko", 3, 4000, 2.5);
 	shared_ptr<Employee> t1 = make_shared<Tester>("Alexandr Ivanov", 2, 45, 50.0);
 	shared_ptr<Employee> m1 = make_shared<ProjectManager>("Kristina", 5, 20000.0, 10, 1500.0);
@@ -133,22 +133,22 @@ int main()
 	this_thread::sleep_for(chrono::seconds(delayTime));
 	myProject.startwork();
 	this_thread::sleep_for(chrono::seconds(delayTime));
-	cout << "Общий фонд оплаты труда: " << myProject.calculateTotalSalary() << " грн\n\n";
+	cout << "РћР±С‰РёР№ С„РѕРЅРґ РѕРїР»Р°С‚С‹ С‚СЂСѓРґР°: " << myProject.calculateTotalSalary() << " РіСЂРЅ\n\n";
 
 	this_thread::sleep_for(chrono::seconds(delayTime));
 	shared_ptr<Employee> topEmp = myProject.findMaxSalaryEmployee();
 	if (topEmp)
 	{
-		cout << "Самый высокооплачиваемый сотрудник:\n";
+		cout << "РЎР°РјС‹Р№ РІС‹СЃРѕРєРѕРѕРїР»Р°С‡РёРІР°РµРјС‹Р№ СЃРѕС‚СЂСѓРґРЅРёРє:\n";
 		cout << " - " << topEmp->getName() << " (" << topEmp->getPosition()
-			<< ") с зарплатой: " << topEmp->calculateSalary() << " грн\n\n";
+			<< ") СЃ Р·Р°СЂРїР»Р°С‚РѕР№: " << topEmp->calculateSalary() << " РіСЂРЅ\n\n";
 	}
 
 	this_thread::sleep_for(chrono::seconds(delayTime));
-	cout << "--- Удаление сотрудника (Alexandr Ivanov) ---\n";
+	cout << "--- РЈРґР°Р»РµРЅРёРµ СЃРѕС‚СЂСѓРґРЅРёРєР° (Alexandr Ivanov) ---\n";
 	myProject.removeEmployee("Alexandr Ivanov");
 	this_thread::sleep_for(chrono::seconds(delayTime));
 	myProject.showParticipants();
-	cout << "Новый общий фонд оплаты труда: " << myProject.calculateTotalSalary() << " грн\n";
+	cout << "РќРѕРІС‹Р№ РѕР±С‰РёР№ С„РѕРЅРґ РѕРїР»Р°С‚С‹ С‚СЂСѓРґР°: " << myProject.calculateTotalSalary() << " РіСЂРЅ\n";
 	return 0;
 }

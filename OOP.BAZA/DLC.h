@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <iostream>
 #include <string>
 #include <vector>
@@ -12,16 +12,16 @@ public:
 	static void activateCrunchMode(const string& projectName)
 	{
 		cout << "\n========================================\n";
-		cout << " [DLC ALERT] ÂÊËÞ×ÅÍ ÐÅÆÈÌ ÊÐÀÍ×À ÄËß ÏÐÎÅÊÒÀ: " << projectName << "!\n";
-		cout << " Ñðîêè ãîðÿò! Âñå ðàçðàáîò÷èêè ïèøóò êîä â äâà ðàçà áûñòðåå,\n";
-		cout << " à òåñòèðîâùèêè íàõîäÿò âäâîå áîëüøå áàãîâ!\n";
+		cout << " [DLC ALERT] Ð’ÐšÐ›Ð®Ð§Ð•Ð Ð Ð•Ð–Ð˜Ðœ ÐšÐ ÐÐÐ§Ð Ð”Ð›Ð¯ ÐŸÐ ÐžÐ•ÐšÐ¢Ð: " << projectName << "!\n";
+		cout << " Ð¡Ñ€Ð¾ÐºÐ¸ Ð³Ð¾Ñ€ÑÑ‚! Ð’ÑÐµ Ñ€Ð°Ð·Ñ€Ð°Ð±Ð¾Ñ‚Ñ‡Ð¸ÐºÐ¸ Ð¿Ð¸ÑˆÑƒÑ‚ ÐºÐ¾Ð´ Ð² Ð´Ð²Ð° Ñ€Ð°Ð·Ð° Ð±Ñ‹ÑÑ‚Ñ€ÐµÐµ,\n";
+		cout << " Ð° Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ñ‰Ð¸ÐºÐ¸ Ð½Ð°Ñ…Ð¾Ð´ÑÑ‚ Ð²Ð´Ð²Ð¾Ðµ Ð±Ð¾Ð»ÑŒÑˆÐµ Ð±Ð°Ð³Ð¾Ð²!\n";
 		cout << "========================================\n\n";
 	}
 	static void applyCrunchBonus(const vector<shared_ptr<Employee>>& employees)
 	{
 		for (const auto& emp : employees)
 		{
-			cout << " [CRUNCH] Ñîòðóäíèê " << emp->getName() << " ðàáîòàåò ñâåðõóðî÷íî!\n";
+			cout << " [CRUNCH] Ð¡Ð¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸Ðº " << emp->getName() << " Ñ€Ð°Ð±Ð¾Ñ‚Ð°ÐµÑ‚ ÑÐ²ÐµÑ€Ñ…ÑƒÑ€Ð¾Ñ‡Ð½Ð¾!\n";
 		}
 		cout << "\n";
 	}
